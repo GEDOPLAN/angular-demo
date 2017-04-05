@@ -1,0 +1,29 @@
+  @import '../../../node_modules/bootstrap/less/variables.less';
+  .main {
+    background: url("./images/pizza.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 84vh;
+  }
+
+  .home-logo {
+    display: none;
+  }
+
+  @media (min-width: @screen-md-max) {
+    .home-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2em;
+    height: 100%;
+    img {
+      vertical-align: middle;
+    }
+    }
+  }
+
+  @media (max-width: 1700px) {
+    .home-logo {
+      transform: rotate(90deg);
+    }
+  }

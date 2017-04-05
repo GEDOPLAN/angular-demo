@@ -8,7 +8,8 @@
         "outDir": "dist",
         "assets": [
             "assets",
-            "favicon.ico"
+            "favicon.ico",
+            "**/images/*"
         ],
         "index": "index.html",
         "main": "main.ts",
@@ -21,7 +22,7 @@
             "../node_modules/admin-lte/bootstrap/css/bootstrap.min.css",
             "../node_modules/admin-lte/dist/css/AdminLTE.min.css",
             "../node_modules/admin-lte/dist/css/skins/skin-blue-light.min.css",
-            "styles.css"
+            "styles.less"
         ],
         "scripts": [
             "../node_modules/admin-lte/plugins/jQuery/jquery-2.2.3.min.js",
@@ -57,7 +58,7 @@
         }
     },
     "defaults": {
-        "styleExt": "css",
+        "styleExt": "less",
         "component": {}
     }
 }

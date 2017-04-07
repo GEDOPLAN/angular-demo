@@ -1,0 +1,8 @@
+{
+  "/api-hello/*": {
+    "target": "http://echo.jsontest.com",
+    "secure": false,
+    "logLevel": "debug",
+         "changeOrigin": true
+  }
+}

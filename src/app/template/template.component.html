@@ -1,17 +1,30 @@
-<!--
+<fieldset>
+    <legend>
+        PropertyBinding
+    </legend>
+    <!--
     Allgemein: <div [DOM-Attribut]="Expression">
     Allgemein: <div [attr.HTML-Attribut]="Expression">
 -->
 
-Input: <input [value]="value" [attr.alt]="sd" class="sd" /> 
-<!-- 'value' setzt die DOM-Property, attr.alt das HTML-Attribut als Expression, class das HTML Attribut ohne Expression  -->
+    Input: <input [value]="value" [attr.alt]="sd" class="sd" />
+    <!-- 'value' setzt die DOM-Property, attr.alt das HTML-Attribut als Expression, class das HTML Attribut ohne Expression  -->
 
-Input: <input value="value" [style.width.px]="100+100"/>
-<!-- Styling allgemein: <div [style.style-attribut.style-einheit]="Expression" -->
+    Input: <input value="value" [style.width.px]="100+100" />
+    <!-- Styling allgemein: <div [style.style-attribut.style-einheit]="Expression" -->
 
-Input: <input value="{{value}}"/>
-<!-- alternative mittels Interpolation -->
+    Input: <input value="{{value}}" />
+    <!-- alternative mittels Interpolation -->
 
-<button (click)="change()">change</button>
+    <button (click)="change()">change</button>
+</fieldset>
 
-<hr/>
+<fieldset>
+    <legend>
+        EventBinding
+    </legend>
+
+    Event Verarbeitung:
+    <input (focus)="key='focus'" (keydown.enter)="onEnter();" (keydown.alt.arrowdown)="onAltDown();" 
+        (keydown.f5)="key='f5';$event.preventDefault();"> {{key}}
+</fieldset>

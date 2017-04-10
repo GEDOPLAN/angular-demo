@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SourceLinkServiceService} from '../services/source-link-service.service';
+import { SourceLinkServiceService } from '../services/source-link-service.service';
 
 @Component({
   selector: 'app-template',
@@ -8,17 +8,27 @@ import {SourceLinkServiceService} from '../services/source-link-service.service'
 })
 export class TemplateComponent implements OnInit {
 
-  value='Hello World';
+  value = 'Hello World';
 
-  constructor(src:SourceLinkServiceService) {
-    src.setSourceLink("/src/app/template");
+  constructor(src: SourceLinkServiceService) {
+    src.setSourceLink('/src/app/template');
   }
 
   ngOnInit() {
   }
 
 
-  change(){
-    this.value=this.value +" - new";
+  change() {
+    this.value = this.value + ' - new';
+  }
+
+  key:string;
+
+  onEnter(){
+    this.key="enter";
+  }
+
+  onAltDown(){
+    this.key="alt+runter";
   }
 }

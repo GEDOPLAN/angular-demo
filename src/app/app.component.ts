@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'app works!';
+  private sourceLink;
+
+  public setSourceLink(path:string){
+    this.sourceLink="https://github.com/GEDOPLAN/angular-demo/tree/master" + path;
+  }
 }

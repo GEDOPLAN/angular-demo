@@ -7,17 +7,20 @@ import { RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HelloProxyComponent } from './hello-proxy/hello-proxy.component';
+import { TemplateComponent } from './template/template.component';
 
  const ROUTES:Routes=[
     {path:'', component: HomeComponent},
-    {path:'hello', component: HelloProxyComponent}
+    {path:'hello', component: HelloProxyComponent},
+    {path:'template', component: TemplateComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HelloProxyComponent
+    HelloProxyComponent,
+    TemplateComponent
   ],
   imports: [
     BrowserModule,

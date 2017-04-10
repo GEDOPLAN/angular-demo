@@ -2,8 +2,7 @@ import { Component, OnChanges, Input, Output, EventEmitter} from '@angular/core'
 
 @Component({
   selector: 'app-colorfull',
-  templateUrl: './colorfull.component.html',
-  styleUrls: ['./colorfull.component.less']
+  template: `<button [style.background-color]="getRGBColor()" (click)="change()">Mach mich bunt!</button>`
 })
 export class ColorfullComponent implements OnChanges {
 

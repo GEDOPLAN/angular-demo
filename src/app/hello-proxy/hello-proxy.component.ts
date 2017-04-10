@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HelloServiceService} from './services/hello-service.service';
-import {AppComponent} from '../app.component';
+import {SourceLinkServiceService} from '../services/source-link-service.service';
 
 @Component({
   selector: 'app-hello-proxy',
@@ -14,8 +14,8 @@ export class HelloProxyComponent implements OnInit {
 
   messageFromService:string;
 
-  constructor(helloService:HelloServiceService, app:AppComponent) {
-    app.setSourceLink("/src/app/hello-proxy");
+  constructor(helloService:HelloServiceService, src:SourceLinkServiceService) {
+    src.setSourceLink("/src/app/hello-proxy");
     helloService.getMessage().subscribe( text => this.messageFromService=text)
   }
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {SourceLinkServiceService} from './services/source-link-service.service' 
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  private sourceLink;
 
-  public setSourceLink(path:string){
-    this.sourceLink="https://github.com/GEDOPLAN/angular-demo/tree/master" + path;
-  }
+constructor( public src:SourceLinkServiceService){}
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AppComponent} from '../app.component';
+import {SourceLinkServiceService} from '../services/source-link-service.service';
 
 @Component({
   selector: 'app-template',
@@ -10,8 +10,8 @@ export class TemplateComponent implements OnInit {
 
   value='Hello World';
 
-  constructor(app:AppComponent) {
-    app.setSourceLink('/src/app/template');
+  constructor(src:SourceLinkServiceService) {
+    src.setSourceLink("/src/app/template");
   }
 
   ngOnInit() {

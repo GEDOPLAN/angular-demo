@@ -10,6 +10,7 @@ import { SourceLinkServiceService } from './services/source-link-service.service
 import { HomeComponent } from './home/home.component';
 import { HelloProxyComponent } from './hello-proxy/hello-proxy.component';
 import { TemplateComponent } from './template/template.component';
+import { ColorfullComponent } from './template/colorfull/colorfull.component';
 
 const ROUTES: Routes = [
   { path: '', component: HomeComponent, canActivate: [SourceLinkGuard]},
@@ -22,7 +23,8 @@ const ROUTES: Routes = [
     AppComponent,
     HomeComponent,
     HelloProxyComponent,
-    TemplateComponent
+    TemplateComponent,
+    ColorfullComponent
   ],
   imports: [
     BrowserModule,

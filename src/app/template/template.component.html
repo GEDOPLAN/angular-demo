@@ -60,3 +60,11 @@
     <br/>
     <p *ngIf="ifCond">da</p> <p *ngIf="!ifCond">weg</p> <button (click)="ifCond=!ifCond">*NgIf-Switch</button>
 </fieldset>
+
+<fieldset>
+    <legend>
+        Input und Output
+    </legend>
+
+    <app-colorfull [rgb-string]="'255,150,50'" (styleChange)="buttonColor=$event"></app-colorfull> -> {{buttonColor}}
+</fieldset>

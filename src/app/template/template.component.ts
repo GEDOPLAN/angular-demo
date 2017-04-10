@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { SourceLinkServiceService } from '../services/source-link-service.service';
 
+import {ColorfullComponent} from './colorfull/colorfull.component'
+
 @Component({
   selector: 'app-template',
   templateUrl: './template.component.html',
-  styleUrls: ['./template.component.less']
+  styleUrls: ['./template.component.less'],
+  providers: [
+    ColorfullComponent
+  ]
 })
 export class TemplateComponent implements OnInit {
 

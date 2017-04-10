@@ -22,13 +22,23 @@ export class TemplateComponent implements OnInit {
     this.value = this.value + ' - new';
   }
 
-  key:string;
+  key: string;
 
-  onEnter(){
-    this.key="enter";
+  onEnter() {
+    this.key = "enter";
   }
 
-  onAltDown(){
-    this.key="alt+runter";
+  onAltDown() {
+    this.key = "alt+runter";
   }
+
+  in1: string;
+  in2: string;
+
+  input(ele: HTMLInputElement) {
+    console.log(ele);
+  }
+
+  ifCond = false;
+  elements = ['Hello', 'World', '!'];
 }

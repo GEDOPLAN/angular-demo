@@ -7,14 +7,14 @@
     Allgemein: <div [attr.HTML-Attribut]="Expression">
 -->
 
-    Input: <input [value]="value" [attr.alt]="sd" class="sd" />
     <!-- 'value' setzt die DOM-Property, attr.alt das HTML-Attribut als Expression, class das HTML Attribut ohne Expression  -->
+    Input: <input [value]="value" [attr.alt]="sd" class="sd" />
 
-    Input: <input value="value" [style.width.px]="100+100" />
     <!-- Styling allgemein: <div [style.style-attribut.style-einheit]="Expression" -->
+    Input: <input value="value" [style.width.px]="100+100" />
 
-    Input: <input value="{{value}}" />
     <!-- alternative mittels Interpolation -->
+    Input: <input value="{{value}}" />
 
     <button (click)="change()">change</button>
 </fieldset>
@@ -25,6 +25,38 @@
     </legend>
 
     Event Verarbeitung:
-    <input (focus)="key='focus'" (keydown.enter)="onEnter();" (keydown.alt.arrowdown)="onAltDown();" 
-        (keydown.f5)="key='f5';$event.preventDefault();"> {{key}}
+    <input (focus)="key='focus'" (keydown.enter)="onEnter();" (keydown.alt.arrowdown)="onAltDown();" (keydown.f5)="key='f5';$event.preventDefault();">    {{key}}
+</fieldset>
+
+<fieldset>
+    <legend>
+        TwoWayBinding
+    </legend>
+
+    <input [(ngModel)]="in1" /> : {{in1}}<br/>
+
+
+    <!-- ausführliche Schreibweise -->
+    <input [ngModel]="in2" (ngModelChange)="in2=$event" /> : {{in2}}
+</fieldset>
+
+<fieldset>
+    <legend>
+        Template Variable
+    </legend>
+    <input #in (change)="input(in)" /><input [value]="in.value" /><br/> {{in}}
+</fieldset>
+
+
+<fieldset>
+    <legend>
+        Microsyntax
+    </legend>
+
+    <ul>
+        <li *ngFor="let e of elements">{{e}}</li>
+    </ul>
+
+    <br/>
+    <p *ngIf="ifCond">da</p> <p *ngIf="!ifCond">weg</p> <button (click)="ifCond=!ifCond">*NgIf-Switch</button>
 </fieldset>

@@ -1,14 +1,18 @@
-import { Component, OnInit, ViewChild, ViewChildren, AfterViewInit, QueryList } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren, AfterViewInit, QueryList, ContentChildren } from '@angular/core';
 import { SourceLinkServiceService } from '../services/source-link-service.service';
 
-import { ColorfullComponent } from './colorfull/colorfull.component'
+import { ColorfullComponent } from './colorfull/colorfull.component';
+import { BoxComponent } from './box/box.component';
+import { BoxHeaderDirective } from './box/box-header.directive';
 
 @Component({
   selector: 'app-template',
   templateUrl: './template.component.html',
   styleUrls: ['./template.component.less'],
   providers: [
-    ColorfullComponent
+    ColorfullComponent,
+    BoxComponent,
+    BoxHeaderDirective
   ]
 })
 export class TemplateComponent implements OnInit, AfterViewInit {
@@ -48,19 +52,22 @@ export class TemplateComponent implements OnInit, AfterViewInit {
   elements = ['Hello', 'World', '!'];
 
   @ViewChildren(ColorfullComponent)
-  inputs: QueryList<ColorfullComponent>;
+  colorComponents: QueryList<ColorfullComponent>;
 
   @ViewChild(ColorfullComponent)
   colorComponent: ColorfullComponent;
-  
+
   @ViewChild('fieldset')
   fieldSetComponent: any;
 
   anzahlColorComponents: number;
 
   ngAfterViewInit() {
-    this.anzahlColorComponents = this.inputs.length;
+    this.anzahlColorComponents = this.colorComponents.length;
   }
+
+  @ContentChildren(ColorfullComponent)
+  colorComponentsContent: QueryList<ColorfullComponent>;
 
 
 }

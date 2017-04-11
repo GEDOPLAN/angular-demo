@@ -58,7 +58,8 @@
     </ul>
 
     <br/>
-    <p *ngIf="ifCond">da</p> <p *ngIf="!ifCond">weg</p> <button (click)="ifCond=!ifCond">*NgIf-Switch</button>
+    <p *ngIf="ifCond">da</p>
+    <p *ngIf="!ifCond">weg</p> <button (click)="ifCond=!ifCond">*NgIf-Switch</button>
 </fieldset>
 
 <fieldset #fieldset>
@@ -75,7 +76,27 @@
         ViewChildren / ViewChild
     </legend>
 
-    Anzahl Color-Inputs: {{anzahlColorComponents}}<br/>
-    Erstes Color-Inputs: {{colorComponent?.addamount}}<br/>
-    Selektion über Templatevariable: {{fieldSetComponent}}<br/>
+    Anzahl Color-Inputs: {{anzahlColorComponents}}<br/> Erstes Color-Inputs: {{colorComponent?.addamount}}<br/> Selektion
+    über Templatevariable: {{fieldSetComponent}}<br/>
+</fieldset>
+
+<fieldset>
+    <legend>
+        Content Insetion
+    </legend>
+
+    <app-box>
+        <app-box-header>Hello...</app-box-header>
+        Color-Picker:
+        <app-colorfull [rgb-string]="'255,150,50'"></app-colorfull>
+    </app-box>
+</fieldset>
+
+<fieldset>
+    <legend>
+        ContentChildren
+    </legend>
+
+    Anzahl Color-Components mit @ViewChild: {{colorComponents?.length}}<br/> 
+    Anzahl Color-Components mit @ContentChild: {{colorComponentsContent?.length}}<br/>
 </fieldset>

@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { HelloProxyComponent } from './hello-proxy/hello-proxy.component';
 import { TemplateComponent } from './template/template.component';
 import { ColorfullComponent } from './template/colorfull/colorfull.component';
+import { BoxComponent } from './template/box/box.component';
+import { BoxHeaderDirective } from './template/box/box-header.directive';
 
 const ROUTES: Routes = [
   { path: '', component: HomeComponent, canActivate: [SourceLinkGuard]},
@@ -24,7 +26,9 @@ const ROUTES: Routes = [
     HomeComponent,
     HelloProxyComponent,
     TemplateComponent,
-    ColorfullComponent
+    ColorfullComponent,
+    BoxComponent,
+    BoxHeaderDirective
   ],
   imports: [
     BrowserModule,

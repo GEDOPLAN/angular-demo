@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren, AfterViewInit, QueryList } from '@angular/core';
 import { SourceLinkServiceService } from '../services/source-link-service.service';
 
-import {ColorfullComponent} from './colorfull/colorfull.component'
+import { ColorfullComponent } from './colorfull/colorfull.component'
 
 @Component({
   selector: 'app-template',
@@ -11,7 +11,7 @@ import {ColorfullComponent} from './colorfull/colorfull.component'
     ColorfullComponent
   ]
 })
-export class TemplateComponent implements OnInit {
+export class TemplateComponent implements OnInit, AfterViewInit {
 
   value = 'Hello World';
 
@@ -46,4 +46,21 @@ export class TemplateComponent implements OnInit {
 
   ifCond = false;
   elements = ['Hello', 'World', '!'];
+
+  @ViewChildren(ColorfullComponent)
+  inputs: QueryList<ColorfullComponent>;
+
+  @ViewChild(ColorfullComponent)
+  colorComponent: ColorfullComponent;
+  
+  @ViewChild('fieldset')
+  fieldSetComponent: any;
+
+  anzahlColorComponents: number;
+
+  ngAfterViewInit() {
+    this.anzahlColorComponents = this.inputs.length;
+  }
+
+
 }

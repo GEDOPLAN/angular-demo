@@ -61,10 +61,21 @@
     <p *ngIf="ifCond">da</p> <p *ngIf="!ifCond">weg</p> <button (click)="ifCond=!ifCond">*NgIf-Switch</button>
 </fieldset>
 
-<fieldset>
+<fieldset #fieldset>
     <legend>
         Input und Output
     </legend>
 
     <app-colorfull [rgb-string]="'255,150,50'" (styleChange)="buttonColor=$event"></app-colorfull> -> {{buttonColor}}
+</fieldset>
+
+
+<fieldset>
+    <legend>
+        ViewChildren / ViewChild
+    </legend>
+
+    Anzahl Color-Inputs: {{anzahlColorComponents}}<br/>
+    Erstes Color-Inputs: {{colorComponent?.addamount}}<br/>
+    Selektion über Templatevariable: {{fieldSetComponent}}<br/>
 </fieldset>

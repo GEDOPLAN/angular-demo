@@ -14,13 +14,14 @@ import { ColorfullComponent } from './template/colorfull/colorfull.component';
 import { BoxComponent } from './template/box/box.component';
 import { BoxHeaderDirective } from './template/box/box-header.directive';
 import { CustomerInfoComponent } from './template/customer-info/customer-info.component';
-import { DirektiveComponent } from './direktive/direktive.component';
+import { DirectiveComponent } from './directive/directive.component';
+import { ColorfullHelloWorldDirective } from './directive/directives/colorfull-hello-world.directive';
 
 const ROUTES: Routes = [
   { path: '', component: HomeComponent, canActivate: [SourceLinkGuard]},
   { path: 'hello', component: HelloProxyComponent , canActivate: [SourceLinkGuard]},
   { path: 'template', component: TemplateComponent , canActivate: [SourceLinkGuard]},
-  { path: 'direktive', component: DirektiveComponent , canActivate: [SourceLinkGuard]}
+  { path: 'directive', component: DirectiveComponent , canActivate: [SourceLinkGuard]}
 ]
 
 @NgModule({
@@ -33,7 +34,8 @@ const ROUTES: Routes = [
     BoxComponent,
     BoxHeaderDirective,
     CustomerInfoComponent,
-    DirektiveComponent
+    DirectiveComponent,
+    ColorfullHelloWorldDirective
   ],
   imports: [
     BrowserModule,

@@ -14,11 +14,13 @@ import { ColorfullComponent } from './template/colorfull/colorfull.component';
 import { BoxComponent } from './template/box/box.component';
 import { BoxHeaderDirective } from './template/box/box-header.directive';
 import { CustomerInfoComponent } from './template/customer-info/customer-info.component';
+import { DirektiveComponent } from './direktive/direktive.component';
 
 const ROUTES: Routes = [
   { path: '', component: HomeComponent, canActivate: [SourceLinkGuard]},
   { path: 'hello', component: HelloProxyComponent , canActivate: [SourceLinkGuard]},
-  { path: 'template', component: TemplateComponent , canActivate: [SourceLinkGuard]}
+  { path: 'template', component: TemplateComponent , canActivate: [SourceLinkGuard]},
+  { path: 'direktive', component: DirektiveComponent , canActivate: [SourceLinkGuard]}
 ]
 
 @NgModule({
@@ -30,7 +32,8 @@ const ROUTES: Routes = [
     ColorfullComponent,
     BoxComponent,
     BoxHeaderDirective,
-    CustomerInfoComponent
+    CustomerInfoComponent,
+    DirektiveComponent
   ],
   imports: [
     BrowserModule,

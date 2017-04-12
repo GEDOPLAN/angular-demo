@@ -5,6 +5,8 @@ import { ColorfullComponent } from './colorfull/colorfull.component';
 import { BoxComponent } from './box/box.component';
 import { BoxHeaderDirective } from './box/box-header.directive';
 
+import { Customer, CustomerInfoComponent } from './customer-info/customer-info.component'
+
 @Component({
   selector: 'app-template',
   templateUrl: './template.component.html',
@@ -12,7 +14,8 @@ import { BoxHeaderDirective } from './box/box-header.directive';
   providers: [
     ColorfullComponent,
     BoxComponent,
-    BoxHeaderDirective
+    BoxHeaderDirective,
+    CustomerInfoComponent
   ]
 })
 export class TemplateComponent implements OnInit, AfterViewInit {
@@ -69,5 +72,15 @@ export class TemplateComponent implements OnInit, AfterViewInit {
   @ContentChildren(ColorfullComponent)
   colorComponentsContent: QueryList<ColorfullComponent>;
 
+
+  customer: Customer = {
+    age: 14,
+    company: "Musterfirma",
+    name: "Max Mustermann"
+  }
+
+  changName(){
+    this.customer.name=this.customer.name + ' -new- ';
+  }
 
 }

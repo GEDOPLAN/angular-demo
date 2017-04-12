@@ -100,3 +100,12 @@
     Anzahl Color-Components mit @ViewChild: {{colorComponents?.length}}<br/> 
     Anzahl Color-Components mit @ContentChild: {{colorComponentsContent?.length}}<br/>
 </fieldset>
+
+<fieldset>
+    <legend>
+        ngDoCheck-Demo
+    </legend>
+
+    <button (click)="changName()"> changeName </button>
+    <app-customer-info [customer]="customer"></app-customer-info>
+</fieldset>

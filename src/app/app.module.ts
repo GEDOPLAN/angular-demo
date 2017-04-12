@@ -13,6 +13,7 @@ import { TemplateComponent } from './template/template.component';
 import { ColorfullComponent } from './template/colorfull/colorfull.component';
 import { BoxComponent } from './template/box/box.component';
 import { BoxHeaderDirective } from './template/box/box-header.directive';
+import { CustomerInfoComponent } from './template/customer-info/customer-info.component';
 
 const ROUTES: Routes = [
   { path: '', component: HomeComponent, canActivate: [SourceLinkGuard]},
@@ -28,7 +29,8 @@ const ROUTES: Routes = [
     TemplateComponent,
     ColorfullComponent,
     BoxComponent,
-    BoxHeaderDirective
+    BoxHeaderDirective,
+    CustomerInfoComponent
   ],
   imports: [
     BrowserModule,

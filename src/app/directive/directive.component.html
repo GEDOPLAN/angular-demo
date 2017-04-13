@@ -14,4 +14,7 @@
   </legend>
 
   <button id="demo-button" (click)="buttonclick()" appLog></button>
+  <br/>
+  <button appErrorbutton (click)="error2=!error2" errormessage="Ungültig, Button gesperrt" [error]="error1">click 1</button>
+  <button appErrorbutton (click)="error1=!error1" errormessage="Ungültig, Button gesperrt" [error]="error2">click 2</button>
 </fieldset>

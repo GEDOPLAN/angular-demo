@@ -16,6 +16,7 @@ import { BoxHeaderDirective } from './template/box/box-header.directive';
 import { CustomerInfoComponent } from './template/customer-info/customer-info.component';
 import { DirectiveComponent } from './directive/directive.component';
 import { ColorfullHelloWorldDirective } from './directive/directives/colorfull-hello-world.directive';
+import { LogDirective } from './directive/directives/log.directive';
 
 const ROUTES: Routes = [
   { path: '', component: HomeComponent, canActivate: [SourceLinkGuard]},
@@ -35,7 +36,8 @@ const ROUTES: Routes = [
     BoxHeaderDirective,
     CustomerInfoComponent,
     DirectiveComponent,
-    ColorfullHelloWorldDirective
+    ColorfullHelloWorldDirective,
+    LogDirective
   ],
   imports: [
     BrowserModule,

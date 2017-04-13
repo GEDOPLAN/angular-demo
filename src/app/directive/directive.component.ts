@@ -14,4 +14,8 @@ export class DirectiveComponent implements OnInit {
   ngOnInit() {
   }
 
+  buttonclick() {
+    console.log('click');
+  }
+
 }

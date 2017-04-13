@@ -3,7 +3,8 @@ import { Directive, ElementRef, Input, HostBinding, OnChanges } from '@angular/c
 const ERROR_STYLE = "2px solid red";
 
 @Directive({
-  selector: 'button[appErrorbutton]'
+  selector: 'button[appErrorbutton]',
+  exportAs: 'erobtn'
 })
 export class ErrorbuttonDirective implements OnChanges {
 

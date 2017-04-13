@@ -18,3 +18,14 @@
   <button appErrorbutton (click)="error2=!error2" errormessage="Ungültig, Button gesperrt" [error]="error1">click 1</button>
   <button appErrorbutton (click)="error1=!error1" errormessage="Ungültig, Button gesperrt" [error]="error2">click 2</button>
 </fieldset>
+
+<fieldset>
+  <legend>
+    ExportAS, Zugriff auf Direktive
+  </legend>
+
+  <button appErrorbutton appLog #button #log='log' #errorbutton='erobtn'></button><br/>
+  Button über #button:{{button}}<br/>
+  Button über #log:{{log |json}}<br/>
+  Button über #errorbutton:{{errorbutton | json}}<br/>
+</fieldset>

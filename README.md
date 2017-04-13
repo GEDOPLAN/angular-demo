@@ -1,14 +1,17 @@
 # Angular Demo
- - ngOnInit
- - ngOnChanges
- - ngAfterContentInit
- - ngAfterViewInit
- - ngOnDestroy
- - ngAfterViewChecked
- - ngAfterContentChecked
- - ngDoCheck
+ - Angular-CLI
+ - Property Binding
+ - Event Binding
+ - TwoWayBinding
+ -  Template Variable
+ - Micro Syntax
+ - @Input und @Output Decorator
+ - Content Insertion
+ - ContentChildren
+ - Lifecycle Methoden
+ - HostBinding und HostListener
 
-![demo anwendung](http://raw.githubusercontent.com/GEDOPLAN/angular-demo/master/docs/app.png)
+![Screenshot](docs/app.png)
 
 # Run 
 npm start

@@ -10,6 +10,8 @@ import { SourceLinkServiceService } from './services/source-link-service.service
 import { HomeComponent } from './home/home.component';
 import { HelloProxyComponent } from './hello-proxy/hello-proxy.component';
 import { TemplateComponent } from './template/template.component';
+import { ComponentComponent } from './component/component.component';
+import { VeEmulateComponent, VeNativeComponent, VeNoneComponent } from './component/components';
 import { ColorfullComponent } from './template/colorfull/colorfull.component';
 import { BoxComponent } from './template/box/box.component';
 import { BoxHeaderDirective } from './template/box/box-header.directive';
@@ -23,7 +25,8 @@ const ROUTES: Routes = [
   { path: '', component: HomeComponent, canActivate: [SourceLinkGuard]},
   { path: 'hello', component: HelloProxyComponent , canActivate: [SourceLinkGuard]},
   { path: 'template', component: TemplateComponent , canActivate: [SourceLinkGuard]},
-  { path: 'directive', component: DirectiveComponent , canActivate: [SourceLinkGuard]}
+  { path: 'directive', component: DirectiveComponent , canActivate: [SourceLinkGuard]},
+  { path: 'component', component: ComponentComponent , canActivate: [SourceLinkGuard]}
 ]
 
 @NgModule({
@@ -36,6 +39,8 @@ const ROUTES: Routes = [
     BoxComponent,
     BoxHeaderDirective,
     CustomerInfoComponent,
+    ComponentComponent,
+    VeEmulateComponent, VeNativeComponent, VeNoneComponent,
     DirectiveComponent,
     ColorfullHelloWorldDirective,
     LogDirective,

@@ -1,0 +1,6 @@
+Basis Komponente: <div class="ve"> Hello Basic</div>
+<app-ve-emulate></app-ve-emulate>
+<app-ve-native></app-ve-native>
+<br/>
+<button (click)="hide=!hide">toggle view encapsulation "none" component</button><br/>
+<app-ve-none *ngIf="hide"></app-ve-none>

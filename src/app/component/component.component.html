@@ -1,6 +1,76 @@
-Basis Komponente: <div class="ve"> Hello Basic</div>
-<app-ve-emulate></app-ve-emulate>
-<app-ve-native></app-ve-native>
-<br/>
-<button (click)="hide=!hide">toggle view encapsulation "none" component</button><br/>
-<app-ve-none *ngIf="hide"></app-ve-none>
+<fieldset>
+    <legend>
+        View Encapsulation
+    </legend>
+    Basis Komponente:
+    <div class="ve"> Hello Basic</div>
+    <app-ve-emulate></app-ve-emulate>
+    <app-ve-native></app-ve-native>
+    <br/>
+    <button (click)="hide=!hide">toggle view encapsulation "none" component</button><br/>
+    <app-ve-none *ngIf="hide"></app-ve-none>
+</fieldset>
+
+
+<fieldset>
+    <legend>NgTemplateOutlet / TemplateRef</legend>
+
+    <div class="container">
+        <div class="col-sm-12 col-md-6">
+            <app-template-ref header="Hello" content="This is the content" footer="by GEDOPLAN"></app-template-ref>
+        </div>
+
+        <div class="col-sm-12 col-md-6">
+            <app-template-ref footer="...">
+                <ng-template #headerOutlet>
+                    <h1>Super-Header</h1>
+                </ng-template>
+                <ng-template #contentOutlet>
+                    <i>Italic Content</i>
+                </ng-template>
+            </app-template-ref>
+        </div>
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend> NgTemplateRef und ngFor</legend>
+
+    <div class="container">
+        <div class="col-sm-12 col-md-6">
+            <app-iteration-component [entries]="['Hello', 'World', '!!']"></app-iteration-component>
+        </div>
+
+        <div class="col-sm-12 col-md-6">
+            <app-iteration-component [entries]="['Hello', 'World', '!!']">
+                <ng-template let-e>
+                    {{e}} |
+                </ng-template>
+            </app-iteration-component>
+        </div>
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend> ViewContainerRef / ComponentFactory</legend>
+
+    <app-dynamic></app-dynamic>
+</fieldset>
+
+<fieldset>
+    <legend> createEmbeddedView die Erste</legend>
+    <app-alert level="0" headerText="Fehler" contentText="Ist ja nicht so schlimm..."></app-alert>
+</fieldset>
+
+<fieldset>
+    <legend> createEmbeddedView hin zur Microsyntax</legend>
+    <div class="col-sm-12 col-md-6">
+        <ng-template [repeat-me]="5">
+            <div> Hello World</div>
+        </ng-template>
+    </div>
+
+    <div class="col-sm-12 col-md-6">
+        <div *repeat-me="2"> Hello World</div>
+    </div>
+</fieldset>

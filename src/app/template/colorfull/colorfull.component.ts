@@ -16,7 +16,7 @@ export class ColorfullComponent implements OnChanges {
   }
 
   @Input('rgb-string')
-  rgbaString: string;
+  public rgbaString: string;
 
   @Output()
   styleChange:EventEmitter<string>

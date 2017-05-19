@@ -1,0 +1,17 @@
+<!-- default -->
+<div *ngIf="customeListEntry==null">
+  <ul>
+    <li *ngFor="let e of entries"> Entry: {{e}}</li>
+<!--    
+    Zur Erinnerung, die obige *ngFor Schreibweise ist nur eine Kurzform für:
+    <ng-template ngFor [ngForOf]="entries" let-e>
+      <li>Entry: {{e}}</li>
+    </ng-template>
+    -->
+  </ul>
+</div>
+
+<!-- custom -->
+<div *ngIf="customeListEntry!=null">
+  <ng-template ngFor [ngForOf]="entries" [ngForTemplate]="customeListEntry"></ng-template>
+</div>

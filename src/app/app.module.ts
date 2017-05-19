@@ -20,6 +20,11 @@ import { DirectiveComponent } from './directive/directive.component';
 import { ColorfullHelloWorldDirective } from './directive/directives/colorfull-hello-world.directive';
 import { LogDirective } from './directive/directives/log.directive';
 import { ErrorbuttonDirective } from './directive/directives/errorbutton.directive';
+import { TemplateRefComponent } from './component/components/template-ref/template-ref.component';
+import { IterationComponentComponent } from './component/components/iteration-component/iteration-component.component';
+import { DynamicComponent } from './component/components/dynamic/dynamic.component';
+import { RepeatMeDirective } from './component/components/directives/repeat-me.directive';
+import { AlertComponent } from './component/components/alert/alert.component';
 
 const ROUTES: Routes = [
   { path: '', component: HomeComponent, canActivate: [SourceLinkGuard]},
@@ -44,7 +49,12 @@ const ROUTES: Routes = [
     DirectiveComponent,
     ColorfullHelloWorldDirective,
     LogDirective,
-    ErrorbuttonDirective
+    ErrorbuttonDirective,
+    TemplateRefComponent,
+    IterationComponentComponent,
+    DynamicComponent,
+    RepeatMeDirective,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +65,9 @@ const ROUTES: Routes = [
   providers: [
     SourceLinkServiceService,
     SourceLinkGuard
+  ],
+  entryComponents: [
+    ColorfullComponent
   ],
   bootstrap: [AppComponent]
 })

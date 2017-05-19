@@ -1,0 +1,21 @@
+<div class="cont">
+
+  <div class="header">
+    <ng-template [ngTemplateOutlet]="headerOutlet"></ng-template>
+    <p *ngIf="!headerOutlet">
+      {{header}}
+    </p>
+  </div>
+  <div class="content">
+    <ng-template [ngTemplateOutlet]="contentOutlet"></ng-template>
+    <p *ngIf="!contentOutlet">
+      {{content}}
+    </p>
+  </div>
+  <div>
+    <ng-template [ngTemplateOutlet]="footerOutlet"></ng-template>
+    <p *ngIf="!footerOutlet">
+      {{footer}}
+    </p>
+  </div>
+</div>

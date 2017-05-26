@@ -28,13 +28,15 @@ import { AlertComponent } from './component/components/alert/alert.component';
 import { ChangeMeComponent } from './component/components/change-me/change-me.component';
 import { ChangeMeComponentOnPush } from './component/components/change-me-push/change-me.component';
 import { ChangeMeComponentRef } from './component/components/change-me-ref/change-me.component';
+import { BuildInsComponent } from './build-ins/build-ins.component';
 
 const ROUTES: Routes = [
   { path: '', component: HomeComponent, canActivate: [SourceLinkGuard]},
   { path: 'hello', component: HelloProxyComponent , canActivate: [SourceLinkGuard]},
   { path: 'template', component: TemplateComponent , canActivate: [SourceLinkGuard]},
   { path: 'directive', component: DirectiveComponent , canActivate: [SourceLinkGuard]},
-  { path: 'component', component: ComponentComponent , canActivate: [SourceLinkGuard]}
+  { path: 'component', component: ComponentComponent , canActivate: [SourceLinkGuard]},
+  { path: 'buildin', component: BuildInsComponent , canActivate: [SourceLinkGuard]}
 ]
 
 @NgModule({
@@ -60,7 +62,8 @@ const ROUTES: Routes = [
     AlertComponent,
     ChangeMeComponent,
     ChangeMeComponentOnPush,
-    ChangeMeComponentRef
+    ChangeMeComponentRef,
+    BuildInsComponent
   ],
   imports: [
     BrowserModule,

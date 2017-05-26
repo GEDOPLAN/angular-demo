@@ -1,0 +1,36 @@
+<fieldset>
+  <legend>
+    Standard Direktive
+  </legend>
+
+  *NgIf
+  <div *ngIf="true">Wird angezeigt</div>
+  <div *ngIf="false">Wird nicht angezeigt</div>
+
+  <br/> [ngSwitch]
+  <div [ngSwitch]="500">
+    <div *ngSwitchCase="100">Ist 100</div>
+    <div *ngSwitchCase="500">Ist 500</div>
+    <div *ngSwitchDefault>Ist was anderes</div>
+  </div>
+
+  <br/> [ngClass]<br/>
+  <button class="btn" [ngClass]="{'btn-danger':isDanger, 'btn-primary':!isDanger}" (click)="isDanger=isDanger?false:true">Style-Button</button>
+  <button class="btn" [ngClass]="someattribute?.cssclass">Style-Button</button>
+
+  <br/> <br/>[ngStyle]<br/>
+  <div [ngStyle]="{color: colorRed}">Hello Style</div>
+
+  <br/> <br/>*ngFor<br/>
+  <ul>
+    <li *ngFor="let element of elements; let i=index; let isOdd='odd'; let isEven='even'; let isLast='last'">
+      {{element}}, Index: {{i}}, Odd: {{isOdd}}, Even: {{isEven}}, Last: {{isLast}}
+    </li>
+  </ul>
+
+    <br/> <br/>ngNonBindable<br/>
+    {{nothingHere}}
+    <div ngNonBindable>
+      {{nothingHere}}
+    </div>
+</fieldset>

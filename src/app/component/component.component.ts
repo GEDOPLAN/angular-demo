@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { VeEmulateComponent, VeNativeComponent, VeNoneComponent } from './components';
+import { SourceLinkServiceService } from '../services/source-link-service.service';
 
-import { Entry } from './components/change-me/change-me.component'
+import { Entry } from './components/change-me/change-me.component';
 
 @Component({
   selector: 'app-component',
@@ -25,7 +26,8 @@ export class ComponentComponent {
     this.entry.text = "def";
   }
 
-  constructor() {
+  constructor(src: SourceLinkServiceService) {
+    src.setSourceLink('/src/app/component');
   }
 
 }

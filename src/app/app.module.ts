@@ -25,6 +25,9 @@ import { IterationComponentComponent } from './component/components/iteration-co
 import { DynamicComponent } from './component/components/dynamic/dynamic.component';
 import { RepeatMeDirective } from './component/components/directives/repeat-me.directive';
 import { AlertComponent } from './component/components/alert/alert.component';
+import { ChangeMeComponent } from './component/components/change-me/change-me.component';
+import { ChangeMeComponentOnPush } from './component/components/change-me-push/change-me.component';
+import { ChangeMeComponentRef } from './component/components/change-me-ref/change-me.component';
 
 const ROUTES: Routes = [
   { path: '', component: HomeComponent, canActivate: [SourceLinkGuard]},
@@ -54,7 +57,10 @@ const ROUTES: Routes = [
     IterationComponentComponent,
     DynamicComponent,
     RepeatMeDirective,
-    AlertComponent
+    AlertComponent,
+    ChangeMeComponent,
+    ChangeMeComponentOnPush,
+    ChangeMeComponentRef
   ],
   imports: [
     BrowserModule,

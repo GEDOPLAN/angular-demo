@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { VeEmulateComponent, VeNativeComponent, VeNoneComponent } from './components';
 
+import { Entry } from './components/change-me/change-me.component'
 
 @Component({
   selector: 'app-component',
@@ -8,11 +9,23 @@ import { VeEmulateComponent, VeNativeComponent, VeNoneComponent } from './compon
   styleUrls: ['./component.component.less'],
   providers: [VeEmulateComponent, VeNativeComponent, VeNoneComponent]
 })
-export class ComponentComponent implements OnInit {
+export class ComponentComponent {
 
+  entry: Entry = new Entry();
+  entryPush: Entry = new Entry();
 
-  constructor() { }
-
-  ngOnInit() {
+  clear() {
+    this.entry.name = "def";
+    this.entry.text = "def";
   }
+
+  clearPush() {
+    this.entry=new Entry();
+    this.entry.name = "def";
+    this.entry.text = "def";
+  }
+
+  constructor() {
+  }
+
 }

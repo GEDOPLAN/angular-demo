@@ -74,3 +74,18 @@
         <div *repeat-me="2"> Hello World</div>
     </div>
 </fieldset>
+
+<fieldset>
+    <legend> ChangeDetection</legend>
+    <app-change-me [entry]="entry"></app-change-me><br/><br/>
+
+    <app-change-me-push [entry]="entry"></app-change-me-push><br/><br/>
+
+    <app-change-me-ref [entry]="entry"></app-change-me-ref><br/><br/>
+
+    <button (click)="clear()" class="btn btn-primary">clear</button>
+    <button (click)="clearPush()" class="btn btn-primary">clear with on push</button>
+</fieldset>
+
+<div class="col-sm-12">Name: <input class="input-control" [(ngModel)] ="entry.name"/></div>
+<div class="col-sm-12">Text: <input class="input-control" [(ngModel)] ="entry.text"/></div>

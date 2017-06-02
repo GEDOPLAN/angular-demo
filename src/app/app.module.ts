@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, OpaqueToken } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
@@ -30,14 +30,17 @@ import { ChangeMeComponentOnPush } from './component/components/change-me-push/c
 import { ChangeMeComponentRef } from './component/components/change-me-ref/change-me.component';
 import { BuildInsComponent } from './build-ins/build-ins.component';
 import { MultiPipe } from './build-ins/pipes/multi.pipe';
+import { DiComponent } from './di/di.component';
+import { ChildComponent } from './di/components/child/child.component';
 
 const ROUTES: Routes = [
-  { path: '', component: HomeComponent, canActivate: [SourceLinkGuard]},
-  { path: 'hello', component: HelloProxyComponent , canActivate: [SourceLinkGuard]},
-  { path: 'template', component: TemplateComponent , canActivate: [SourceLinkGuard]},
-  { path: 'directive', component: DirectiveComponent , canActivate: [SourceLinkGuard]},
-  { path: 'component', component: ComponentComponent , canActivate: [SourceLinkGuard]},
-  { path: 'buildin', component: BuildInsComponent , canActivate: [SourceLinkGuard]}
+  { path: '', component: HomeComponent, canActivate: [SourceLinkGuard] },
+  { path: 'hello', component: HelloProxyComponent, canActivate: [SourceLinkGuard] },
+  { path: 'template', component: TemplateComponent, canActivate: [SourceLinkGuard] },
+  { path: 'directive', component: DirectiveComponent, canActivate: [SourceLinkGuard] },
+  { path: 'component', component: ComponentComponent, canActivate: [SourceLinkGuard] },
+  { path: 'buildin', component: BuildInsComponent, canActivate: [SourceLinkGuard] },
+  { path: 'di', component: DiComponent, canActivate: [SourceLinkGuard] }
 ]
 
 @NgModule({
@@ -65,7 +68,9 @@ const ROUTES: Routes = [
     ChangeMeComponentOnPush,
     ChangeMeComponentRef,
     BuildInsComponent,
-    MultiPipe
+    MultiPipe,
+    DiComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +80,8 @@ const ROUTES: Routes = [
   ],
   providers: [
     SourceLinkServiceService,
-    SourceLinkGuard
+    SourceLinkGuard,
+    { provide: 'DEMO-TOKEN', useValue: 'Value from Root.' }
   ],
   entryComponents: [
     ColorfullComponent

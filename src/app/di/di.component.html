@@ -1,0 +1,20 @@
+<fieldset>
+  <legend>
+    Beispiel Injektion
+  </legend>
+
+  <ul>
+      <li *ngFor="let e of getDemoObjects()">
+        {{e | json}}
+      </li>
+  </ul>
+</fieldset>
+
+<fieldset>
+  <legend>
+   Injector-Hierarchie
+  </legend>
+
+  <app-child></app-child>
+</fieldset>
+

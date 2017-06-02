@@ -34,3 +34,24 @@
       {{nothingHere}}
     </div>
 </fieldset>
+
+<fieldset>
+  <legend>
+    Standard Pipes
+  </legend>
+  uppercase: {{'uppercase' | uppercase}}<br/>
+  lowercase: {{'lowercase' | lowercase}}<br/>
+  slice: {{'slice' | slice:2:5}}<br/>
+  slice: {{['Hello','World', '!'] | slice:1}}<br/>
+  json: {{elements | json}}<br/>
+  number '1.1-1': {{12 | number:'1.1-1'}}<br/>
+  number '1.5-5': {{12 | number:'1.5-5'}}<br/>
+  date 'short': {{ d | date:'shortDate'}}<br/>
+  date 'dd.MM.yyyy': {{ d | date:'dd.MM.yyyy'}}<br/>
+  percent: {{12 | percent:'2.2-2'}}<br/>
+  currency: {{12 | currency:'EUR':true:'2.2-2'}}<br/>
+  async: {{obs | async}}<br/><br/>
+  
+  custome: {{5 | multi}}
+  custome: {{5 | multi:'3'}}
+</fieldset>

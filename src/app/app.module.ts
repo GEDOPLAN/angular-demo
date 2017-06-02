@@ -29,6 +29,7 @@ import { ChangeMeComponent } from './component/components/change-me/change-me.co
 import { ChangeMeComponentOnPush } from './component/components/change-me-push/change-me.component';
 import { ChangeMeComponentRef } from './component/components/change-me-ref/change-me.component';
 import { BuildInsComponent } from './build-ins/build-ins.component';
+import { MultiPipe } from './build-ins/pipes/multi.pipe';
 
 const ROUTES: Routes = [
   { path: '', component: HomeComponent, canActivate: [SourceLinkGuard]},
@@ -63,7 +64,8 @@ const ROUTES: Routes = [
     ChangeMeComponent,
     ChangeMeComponentOnPush,
     ChangeMeComponentRef,
-    BuildInsComponent
+    BuildInsComponent,
+    MultiPipe
   ],
   imports: [
     BrowserModule,

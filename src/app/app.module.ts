@@ -32,6 +32,9 @@ import { BuildInsComponent } from './build-ins/build-ins.component';
 import { MultiPipe } from './build-ins/pipes/multi.pipe';
 import { DiComponent } from './di/di.component';
 import { ChildComponent } from './di/components/child/child.component';
+import { TemplateDrivenComponent } from './template-driven/template-driven.component';
+import { RangeValidatorDirective } from './template-driven/directives/range-validator.directive';
+import { AsyncPostValidatorDirective } from './template-driven/directives/async-post-validator.directive';
 
 const ROUTES: Routes = [
   { path: '', component: HomeComponent, canActivate: [SourceLinkGuard] },
@@ -40,7 +43,8 @@ const ROUTES: Routes = [
   { path: 'directive', component: DirectiveComponent, canActivate: [SourceLinkGuard] },
   { path: 'component', component: ComponentComponent, canActivate: [SourceLinkGuard] },
   { path: 'buildin', component: BuildInsComponent, canActivate: [SourceLinkGuard] },
-  { path: 'di', component: DiComponent, canActivate: [SourceLinkGuard] }
+  { path: 'di', component: DiComponent, canActivate: [SourceLinkGuard] },
+  { path: 'tp', component: TemplateDrivenComponent, canActivate: [SourceLinkGuard] }
 ]
 
 @NgModule({
@@ -70,7 +74,10 @@ const ROUTES: Routes = [
     BuildInsComponent,
     MultiPipe,
     DiComponent,
-    ChildComponent
+    ChildComponent,
+    TemplateDrivenComponent,
+    RangeValidatorDirective,
+    AsyncPostValidatorDirective
   ],
   imports: [
     BrowserModule,

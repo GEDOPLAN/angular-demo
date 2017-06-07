@@ -1,0 +1,167 @@
+<fieldset>
+  <legend>
+    FormControl & OneWayBinding
+  </legend>
+
+  <form #form="ngForm" (ngSubmit)="formModel=form.value">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="form-group col-md-3">
+          <label for="name">Name:</label>
+          <input id="name" type="text" class="form-control" ngModel name="name" #name="ngModel">
+        </div>
+
+        <div class="form-group col-md-1">
+          <label for="age">Alter:</label>
+          <input id="age" type="text" class="form-control" ngModel name="age">
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="mail">E-Mail:</label>
+          <input id="mail" type="text" class="form-control" ngModel name="mail">
+        </div>
+
+        <div class="input-group-btn col-md-1">
+          <button type="submit" class="btn btn-primary">submit</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-3">
+          <textarea rows="6" readonly class="form-control">{{form.value | json}}</textarea>
+        </div>
+        <div class="form-group col-md-3 col-md-offset-1">
+          <textarea rows="6" readonly class="form-control">Form-Model: {{formModel | json}}</textarea>
+        </div>
+      </div>
+    </div>
+  </form>
+</fieldset>
+
+
+<fieldset>
+  <legend>
+    FormControl & TwoWayBinding
+  </legend>
+
+  <form #form2w="ngForm">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="form-group col-md-3">
+          <label for="name">Name:</label>
+          <input id="name" type="text" class="form-control" [(ngModel)]="formModel2w.name" name="name">
+        </div>
+
+        <div class="form-group col-md-1">
+          <label for="age">Alter:</label>
+          <input id="age" type="text" class="form-control" [(ngModel)]="formModel2w.age" name="age">
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="mail">E-Mail:</label>
+          <input id="mail" type="text" class="form-control" [(ngModel)]="formModel2w.mail" name="mail">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-3">
+          <textarea rows="6" readonly class="form-control">{{form2w.value | json}}</textarea>
+        </div>
+        <div class="form-group col-md-3 col-md-offset-1">
+          <textarea rows="6" readonly class="form-control">Form-Model: {{formModel2w | json}}</textarea>
+        </div>
+      </div>
+    </div>
+  </form>
+</fieldset>
+
+
+<fieldset>
+  <legend>
+    Validation
+  </legend>
+
+  <form #formval="ngForm">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="form-group col-md-3">
+          <label for="name">
+            Name:
+              <span *ngIf="nameval.hasError('minlength')">(zu kurz)</span>
+              <span *ngIf="nameval.hasError('required')">(wird benötigt)</span>
+              <span *ngIf="nameval.hasError('maxlength')">(zu lang)</span>
+            </label>
+          <input id="name" type="text" class="form-control" ngModel name="name" #nameval="ngModel" required minlength="3" maxlength="20">
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="mail">E-Mail:</label> <span *ngIf="!mailval.valid">(ungültig)</span>
+          <input id="mail" type="text" class="form-control" #mailval="ngModel" ngModel name="mail" required pattern="^[a-z0-9_\-\.]{2,}@[a-z0-9_\-\.]{2,}\.[a-z]{2,}$">
+        </div>
+
+        <div class="input-group-btn col-md-1">
+          <button type="submit" class="btn btn-primary" [disabled]="!formval.valid">submit</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="alert alert-danger" *ngIf="!formval.valid">
+          Das Formular enthält einen Fehler
+        </div>
+      </div>
+    </div>
+  </form>
+</fieldset>
+
+<fieldset>
+  <legend>
+    NgModel-CSS-Klassen
+  </legend>
+
+  <form #formcss="ngForm">
+    <div class="container-fluid">
+      <div class="form-group col-md-3">
+        <label for="name">Name:</label>
+        <input id="name" type="text" class="form-control" ngModel name="name" #namecss="ngModel" minlength="5" required>
+      </div>
+      <div class="form-group col-md-3">
+        {{inputfield.nativeElement.className}}
+      </div>
+    </div>
+  </form>
+</fieldset>
+
+<fieldset>
+  <legend>
+    Eigene Validatoren
+  </legend>
+
+  <form #formcv="ngForm">
+    <div class="container-fluid">
+    <div ngModelGroup rangeValidator path1="von" path2="bis" #group="ngModelGroup">
+      <div class="form-group col-md-2">
+        <label for="von">Von:</label>
+        <input id="von" type="text" class="form-control" ngModel name="von">
+      </div>
+      <div class="form-group col-md-2">
+        <label for="bis">Bis:</label>
+        <input id="bis" type="text" class="form-control" ngModel name="bis">
+      </div>
+      <div>
+        {{group.errors | json}}
+      </div>
+    </div>
+    </div>
+  </form>
+
+  <form #formcvaa="ngForm">
+    <div class="container-fluid">
+      <div class="form-group col-md-2">
+        <label for="von">ID:</label>
+        <input id="von" type="text" class="form-control" ngModel name="id" asyncPostValidator>
+      </div>
+      <div>
+        Valid: {{formcvaa.valid}}
+      </div>
+    </div>
+  </form>
+</fieldset>

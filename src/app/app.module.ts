@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, OpaqueToken } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -35,6 +35,7 @@ import { ChildComponent } from './pages/di/components/child/child.component';
 import { TemplateDrivenComponent } from './pages/template-driven/template-driven.component';
 import { RangeValidatorDirective } from './pages/template-driven/directives/range-validator.directive';
 import { AsyncPostValidatorDirective } from './pages/template-driven/directives/async-post-validator.directive';
+import { ModelDrivenComponent } from './pages/model-driven/model-driven.component';
 
 const ROUTES: Routes = [
   { path: '', component: HomeComponent, canActivate: [SourceLinkGuard] },
@@ -44,7 +45,8 @@ const ROUTES: Routes = [
   { path: 'component', component: ComponentComponent, canActivate: [SourceLinkGuard] },
   { path: 'buildin', component: BuildInsComponent, canActivate: [SourceLinkGuard] },
   { path: 'di', component: DiComponent, canActivate: [SourceLinkGuard] },
-  { path: 'tp', component: TemplateDrivenComponent, canActivate: [SourceLinkGuard] }
+  { path: 'tp', component: TemplateDrivenComponent, canActivate: [SourceLinkGuard] },
+  { path: 'md', component: ModelDrivenComponent, canActivate: [SourceLinkGuard] }
 ]
 
 @NgModule({
@@ -77,11 +79,13 @@ const ROUTES: Routes = [
     ChildComponent,
     TemplateDrivenComponent,
     RangeValidatorDirective,
-    AsyncPostValidatorDirective
+    AsyncPostValidatorDirective,
+    ModelDrivenComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],

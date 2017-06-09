@@ -1,0 +1,49 @@
+<div class="container">
+  <form novalidate [formGroup]="form" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="form-group col-sm-6 col-md-1">
+        <label for="id">ID</label>
+        <input id="id" name="id" type="text" class="form-control" formControlName="id">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <label for="username">Name</label>
+        <input id="username" name="username" type="text" class="form-control" formControlName="username">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-5">
+        <label for="username">Mail-Adressen</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-6" formArrayName="mails">
+        <ul class="list-group">
+
+          <li class="list-group-item button-line" *ngFor="let m of mails.controls; let i=index">
+            <div formGroupName="{{i}}">
+              <input formControlName="mail" type="text">
+              <button type="button" class="btn btn-sm btn-primary" (click)="removeMail(i)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="sm-col-sm-12 col-md-6 pull-right">
+        <button type="button" class="btn btn-sm btn-primary" (click)="pushMail()"><i class="fa fa-plus" aria-hidden="true"></i></button>
+      </div>
+    </div>
+
+    <div class="row">
+      <button type="submit" class="btn btn-lg btn-primary">submit</button>
+    </div>
+
+  </form>
+
+  Form-Submit: {{user | json }}
+  
+</div>

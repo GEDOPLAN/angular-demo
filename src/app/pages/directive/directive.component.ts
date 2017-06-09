@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SourceLinkServiceService } from '../services/source-link-service.service';
+import { SourceLinkServiceService } from '../../services/source-link-service.service';
 
 @Component({
   selector: 'app-directive',

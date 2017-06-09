@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { VeEmulateComponent, VeNativeComponent, VeNoneComponent } from './components';
-import { SourceLinkServiceService } from '../services/source-link-service.service';
+import { SourceLinkServiceService } from '../../services/source-link-service.service';
 
 import { Entry } from './components/change-me/change-me.component';
 

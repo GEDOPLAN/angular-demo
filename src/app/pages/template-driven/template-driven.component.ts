@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { SourceLinkServiceService } from '../services/source-link-service.service';
+import { SourceLinkServiceService } from '../../services/source-link-service.service';
 
 export interface FormModel {
   name: string;

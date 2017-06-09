@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ViewChildren, AfterViewInit, QueryList, ContentChildren } from '@angular/core';
-import { SourceLinkServiceService } from '../services/source-link-service.service';
+import { SourceLinkServiceService } from '../../services/source-link-service.service';
 
 import { ColorfullComponent } from './colorfull/colorfull.component';
 import { BoxComponent } from './box/box.component';

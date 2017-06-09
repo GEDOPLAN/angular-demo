@@ -1,6 +1,8 @@
-import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, RequiredValidator } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { SourceLinkServiceService } from '../../services/source-link-service.service';
+
+import { } from ''
 
 @Component({
   selector: 'app-model-driven',
@@ -19,8 +21,8 @@ export class ModelDrivenComponent implements OnInit {
     src.setSourceLink('/src/app/model-driven');
 
     this.form = fb.group({
-      id: ['5'],
-      username: [''],
+      id: ['5', control => !/^\d+$/.test(control.value) ? ['Ungültige Eingabe']  : null],
+      username: ['', RequiredValidator],
       mails: fb.array([
         fb.group({
           mail: ['']
@@ -47,5 +49,9 @@ export class ModelDrivenComponent implements OnInit {
   submit() {
     Object.assign(this.user, this.form.value);
   }
+ 
+ patch(){
+   this.form.patchValue({id: 400, username: "Dominik"});
+ }
 
 }

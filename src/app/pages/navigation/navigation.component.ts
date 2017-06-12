@@ -13,13 +13,11 @@ export class NavigationComponent implements OnInit {
 
   pm: any;
 
-
   constructor(src: SourceLinkServiceService, route: ActivatedRoute) {
     src.setSourceLink('/src/app/model-driven');
 
     route.params.subscribe(p => this.pm = p);
     route.queryParams.subscribe(p => this.pq = p);
-
   }
 
   ngOnInit() {

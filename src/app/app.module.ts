@@ -8,15 +8,16 @@ import { SourceLinkServiceService } from './services/source-link-service.service
 import { SourceLinkGuard } from './guards/source-link.guard';
 import { ColorfullComponent } from './pages/template/colorfull/colorfull.component';
 import {PAGES, ROUTES} from './app.route';
-import { Page3Component } from './pages/navigation/pages/page3/page3.component';
-import { Page4Component } from './pages/navigation/pages/page4/page4.component';
+
+import {NotAllowedGuardService} from './pages/navigation/guards/not-allowed-guard.service';
+import {NotEmptyGuard} from './pages/navigation/guards/not-empty-guard.service';
+import {Page1Component} from './pages/navigation/pages/page1/page1.component'; 
+import {ResolveService} from './pages/navigation/service/resolve.service'; 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PAGES,
-    Page3Component,
-    Page4Component
+    PAGES
   ],
   imports: [
     BrowserModule,
@@ -28,6 +29,10 @@ import { Page4Component } from './pages/navigation/pages/page4/page4.component';
   providers: [
     SourceLinkServiceService,
     SourceLinkGuard,
+    NotAllowedGuardService,
+    NotEmptyGuard,
+    Page1Component,
+    ResolveService,
     { provide: 'DEMO-TOKEN', useValue: 'Value from Root.' }
   ],
   entryComponents: [

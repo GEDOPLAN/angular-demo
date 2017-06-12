@@ -1,6 +1,8 @@
 import { RouterModule, Routes } from '@angular/router';
 import { SourceLinkGuard } from './guards/source-link.guard';
 
+import { ResolveService } from './pages/navigation/service/resolve.service';
+
 import { HomeComponent } from './pages/home/home.component';
 import { HelloProxyComponent } from './hello-proxy/hello-proxy.component';
 import { TemplateComponent } from './pages/template/template.component';
@@ -35,6 +37,8 @@ import { Page1Component } from './pages/navigation/pages/page1/page1.component';
 import { Page2Component } from './pages/navigation/pages/page2/page2.component';
 import { Page3Component } from './pages/navigation/pages/page3/page3.component';
 import { Page4Component } from './pages/navigation/pages/page4/page4.component';
+import { NotAllowedGuardService } from './pages/navigation/guards/not-allowed-guard.service';
+import { NotEmptyGuard } from './pages/navigation/guards/not-empty-guard.service';
 
 
 export const ROUTES = RouterModule.forRoot([
@@ -54,6 +58,15 @@ export const ROUTES = RouterModule.forRoot([
       { path: 'p2/:text', component: Page2Component },
       { path: 'p3', component: Page3Component },
       { path: 'p4', component: Page4Component },
+      { path: 'p4-notallowed', component: Page4Component, canActivate: [NotAllowedGuardService] },
+      { path: 'p1-notempty', component: Page1Component, canDeactivate: [NotEmptyGuard] },
+      {
+        path: 'p1-resolve', component: Page1Component, resolve: {
+          message: ResolveService
+        }
+      },
+      { path: 'p1-footer', component: Page1Component, outlet: 'footer'},
+      { path: '**', redirectTo: 'p3', pathMatch: 'full' },
     ]
 
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-page1',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Page1Component implements OnInit {
 
-  constructor() { }
+  input: string;
+
+  message: string;
+
+  constructor(route: ActivatedRoute) {
+    this.message = route.snapshot.data['message'];
+  }
 
   ngOnInit() {
+  }
+
+  canLeave() {
+    return this.input && this.input.length > 0;
   }
 
 }

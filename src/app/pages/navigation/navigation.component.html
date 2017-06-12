@@ -5,6 +5,10 @@
       <li><a [routerLink]="['p2', in.value]" routerLinkActive="active">Page 2</a><input #in></li>
       <li><a [routerLink]="['p3', {'in': in3.value}]" routerLinkActive="active">Page 3</a><input #in3></li>
       <li><a routerLink="p4" [queryParams]="{in: in4.value}" routerLinkActive="active">Page 4</a><input #in4></li>
+      <li><a routerLink="p4-notallowed" routerLinkActive="active">Page 4  - nicht erlaubt</a></li>
+      <li><a routerLink="p1-notempty" routerLinkActive="active">Page 1  - leeres Feld verboten</a></li>
+      <li><a routerLink="p1-resolve" routerLinkActive="active">Page 1  - mit 'resolve'</a></li>
+      <li><a [routerLink]="[{outlets: {'footer': 'p1-footer'}}]" routerLinkActive="active">Page 1  - im Footer</a></li>
     </ul>
   </div>
 </nav>
@@ -15,3 +19,6 @@
 Footer:
 Matrix: {{pm | json}}<br/>
 Query: {{pq | json}}
+<hr/>
+Footer-Outlet
+<router-outlet name="footer"></router-outlet>

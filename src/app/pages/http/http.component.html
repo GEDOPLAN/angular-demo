@@ -1,0 +1,63 @@
+<fieldset>
+  <legend>
+    HTTP-Get Request
+  </legend>
+
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let p of posts">{{p.title}}</li>
+  </ul>
+</fieldset>
+
+<fieldset>
+  <legend>
+    HTTP-Get Request mit Async-Pipe
+  </legend>
+
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let p of posts$|async">{{p.title}}</li>
+  </ul>
+</fieldset>
+
+<fieldset>
+  <legend>
+    HTTP-Get Request mit Parametern
+  </legend>
+
+  <form (submit)="suche(id.value)">
+    <div class="form-group">
+      <label for="id">Post-ID:</label>
+      <input type="id" class="form-control" id="id" #id>
+    </div>
+    <button type="submit" class="btn btn-default">suche</button>
+  </form>
+
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let p of suchePosts$|async">{{p.title}}</li>
+  </ul>
+</fieldset>
+
+<fieldset>
+  <legend>
+    HTTP-Post
+  </legend>
+
+  <form (submit)="save()">
+    <div class="form-group">
+      <label for="id">Post-ID:</label>
+      <input type="id" class="form-control" id="id" name="id" [(ngModel)]="post.id">
+    </div>
+    <div class="form-group">
+      <label for="title">Titel:</label>
+      <input type="title" class="form-control" id="title" name="title" [(ngModel)]="post.title">
+    </div>
+    <div class="form-group">
+      <label for="author">Authir:</label>
+      <input type="author" class="form-control" id="author" name="author" [(ngModel)]="post.author">
+    </div>
+    <button type="submit" class="btn btn-default">speichern</button>
+  </form>
+
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let p of suchePosts$|async">{{p.title}}</li>
+  </ul>
+</fieldset>

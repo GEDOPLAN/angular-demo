@@ -12,7 +12,8 @@ import {PAGES, ROUTES} from './app.route';
 import {NotAllowedGuardService} from './pages/navigation/guards/not-allowed-guard.service';
 import {NotEmptyGuard} from './pages/navigation/guards/not-empty-guard.service';
 import {Page1Component} from './pages/navigation/pages/page1/page1.component'; 
-import {ResolveService} from './pages/navigation/service/resolve.service'; 
+import {ResolveService} from './pages/navigation/service/resolve.service';
+
 
 @NgModule({
   declarations: [

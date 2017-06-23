@@ -39,7 +39,7 @@ import { Page3Component } from './pages/navigation/pages/page3/page3.component';
 import { Page4Component } from './pages/navigation/pages/page4/page4.component';
 import { NotAllowedGuardService } from './pages/navigation/guards/not-allowed-guard.service';
 import { NotEmptyGuard } from './pages/navigation/guards/not-empty-guard.service';
-
+import { HttpComponent } from './pages/http/http.component'; 
 
 export const ROUTES = RouterModule.forRoot([
   { path: '', component: HomeComponent, canActivate: [SourceLinkGuard] },
@@ -69,7 +69,8 @@ export const ROUTES = RouterModule.forRoot([
       { path: '**', redirectTo: 'p3', pathMatch: 'full' },
     ]
 
-  }
+  },
+  { path: 'http', component: HttpComponent, canActivate: [SourceLinkGuard] },
 ]);
 
 export const PAGES = [
@@ -106,5 +107,6 @@ export const PAGES = [
   Page1Component,
   Page2Component,
   Page3Component,
-  Page4Component
+  Page4Component,
+  HttpComponent
 ]

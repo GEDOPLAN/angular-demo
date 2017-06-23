@@ -25,18 +25,18 @@ export class HTTPServiceService {
 
   readById(id: number) {
     let search = new URLSearchParams();
-    search.append("id", <any>id);
+    search.append("id", id + '');
 
     return this.http.get(BASE_URL, { search }).map(r => r.json());
   }
 
-  save(post: Post): Observable<Post>{
+  save(post: Post): Observable<Post> {
     const method = post.id ? RequestMethod.Put : RequestMethod.Post;
 
     return this.http.request(BASE_URL + (post.id || ''), { method, 'body': post }).map(r => r.json());
   }
 
-  remove(id:number): Observable<number>{
+  remove(id: number): Observable<number> {
     return this.http.delete(BASE_URL + id).map(r => id);
   }
 }

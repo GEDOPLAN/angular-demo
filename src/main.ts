@@ -6,6 +6,7 @@ import { environment } from './environments/environment';
 
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/merge';
 
 if (environment.production) {
   enableProdMode();

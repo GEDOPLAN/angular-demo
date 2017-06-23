@@ -35,4 +35,8 @@ export class HTTPServiceService {
 
     return this.http.request(BASE_URL + (post.id || ''), { method, 'body': post }).map(r => r.json());
   }
+
+  remove(id:number): Observable<number>{
+    return this.http.delete(BASE_URL + id).map(r => id);
+  }
 }

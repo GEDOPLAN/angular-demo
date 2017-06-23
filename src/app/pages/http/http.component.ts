@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SourceLinkServiceService } from '../../services/source-link-service.service';
 import { HTTPServiceService, Post } from './services/httpservice.service'
-import { Observable } from 'rxjs/Observable';
+import { Observable, Subject } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-http',
@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class HttpComponent implements OnInit {
 
-  posts: Post[];
+  posts: Post[] = []
   posts$: Observable<Post[]>;
   suchePosts$: Observable<Post[]>;
 
@@ -39,5 +39,38 @@ export class HttpComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
+
+
+  // rxjs 'Single Point of Truth Beispiel //
+  // jegliche Manipulationen werden über einen zentralen Stream behandel
+  editPosts: Subject<any> = new Subject<any>();
+
+  construtorNotInUse() {
+    //...
+    Observable.merge(this.editPosts, this.demoService.read())
+      .map(p => Array.isArray(p) ? p : [p])
+      .subscribe(p => {
+        if (!isNaN(p[0])) {
+          this.posts = this.posts.filter(pos => pos.id != <Number>p[0]);
+          console.log(this.posts);
+        } else {
+          this.posts = this.posts.concat(p);
+          console.log(this.posts);
+        }
+
+      });
+    //...
+  }
+
+    saveSPoT() {
+    this.demoService.save(this.post).subscribe(r => this.editPosts.next(r));
+  }
+
+  remove(id: number) {
+    this.demoService.remove(id).subscribe(r => this.editPosts.next(r));
+  }
+
 
 }

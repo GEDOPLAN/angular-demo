@@ -1,36 +1,17 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "aaa",
+      "author": "aaa",
+      "id": 3
     },
     {
-      "id": 2,
-      "title": "angular",
-      "author": "google"
-    },
-    {
-      "id": 3,
-      "title": "java ee",
-      "author": "gedoplan"
-    },
-    {
+      "title": "fff",
+      "author": "fff",
       "id": 4
-    },
-    {
-      "title": "wewer",
-      "author": "werwer",
-      "id": 5
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }

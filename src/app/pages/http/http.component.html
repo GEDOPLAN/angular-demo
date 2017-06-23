@@ -4,7 +4,7 @@
   </legend>
 
   <ul class="list-group">
-    <li class="list-group-item" *ngFor="let p of posts">{{p.title}}</li>
+    <li class="list-group-item" *ngFor="let p of posts">{{p.id}} : {{p.title}}</li>
   </ul>
 </fieldset>
 
@@ -60,4 +60,18 @@
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let p of suchePosts$|async">{{p.title}}</li>
   </ul>
+</fieldset>
+
+<fieldset>
+  <legend>
+    HTTP-Remove
+  </legend>
+
+  <form (submit)="remove(id.value)">
+    <div class="form-group">
+      <label for="id">Post-ID:</label>
+      <input type="id" class="form-control" id="id" #id>
+    </div>
+    <button type="submit" class="btn btn-default">suche</button>
+  </form>
 </fieldset>

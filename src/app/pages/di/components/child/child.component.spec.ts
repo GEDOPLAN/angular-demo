@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChildComponent } from './child.component';
+import { DemoService} from '../demo.service';
 
 describe('ChildComponent', () => {
   let component: ChildComponent;
@@ -8,9 +9,10 @@ describe('ChildComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChildComponent ]
+      declarations: [ChildComponent],
+      providers: [DemoService, { provide: 'DEMO-TOKEN', useValue: 'Value from Root.' },]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

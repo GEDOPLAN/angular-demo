@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DirectiveComponent } from './directive.component';
+import { SourceLinkServiceService } from '../../services/source-link-service.service';
+
+import {ColorfullHelloWorldDirective} from './directives/colorfull-hello-world.directive';
+import {ErrorbuttonDirective} from './directives/errorbutton.directive';
+import {LogDirective} from './directives/log.directive';
 
 describe('DirectiveComponent', () => {
   let component: DirectiveComponent;
@@ -8,7 +13,8 @@ describe('DirectiveComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DirectiveComponent ]
+      declarations: [ DirectiveComponent, ColorfullHelloWorldDirective, ErrorbuttonDirective, LogDirective],
+      providers: [SourceLinkServiceService]
     })
     .compileComponents();
   }));

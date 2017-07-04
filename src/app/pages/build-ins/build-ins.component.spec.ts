@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MultiPipe } from './pipes/multi.pipe'
 import { BuildInsComponent } from './build-ins.component';
+
+import { SourceLinkServiceService } from '../../services/source-link-service.service';
+
 
 describe('BuildInsComponent', () => {
   let component: BuildInsComponent;
@@ -8,9 +11,10 @@ describe('BuildInsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BuildInsComponent ]
+      declarations: [BuildInsComponent, MultiPipe],
+      providers: [SourceLinkServiceService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

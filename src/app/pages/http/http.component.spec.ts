@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HttpComponent } from './http.component';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import { SourceLinkServiceService } from '../../services/source-link-service.service';
 
 describe('HttpComponent', () => {
   let component: HttpComponent;
@@ -8,7 +11,9 @@ describe('HttpComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HttpComponent ]
+      imports: [FormsModule, HttpModule],
+      declarations: [ HttpComponent ],
+      providers: [SourceLinkServiceService]
     })
     .compileComponents();
   }));

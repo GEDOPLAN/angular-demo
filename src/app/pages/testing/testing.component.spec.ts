@@ -15,11 +15,17 @@ describe('TestingComponent', () => {
     TestBed.configureTestingModule({
       declarations: [TestingComponent],
       providers: [
-        SourceLinkServiceService,
         CalculateService,
-        { provide: HttpService, useClass: HttpServiceMock }
+        SourceLinkServiceService
       ]
     })
+      .overrideComponent(TestingComponent, {
+        set: {
+          providers: [
+            { provide: HttpService, useClass: HttpServiceMock }
+          ]
+        }
+      })
       .compileComponents();
   }));
 

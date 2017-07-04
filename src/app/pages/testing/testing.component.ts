@@ -7,7 +7,10 @@ import { CalculateService } from './services/calculate.service';
 @Component({
   selector: 'app-testing',
   templateUrl: './testing.component.html',
-  styleUrls: ['./testing.component.less']
+  styleUrls: ['./testing.component.less'],
+  providers: [
+    HttpService, CalculateService
+  ]
 })
 export class TestingComponent implements OnInit {
 

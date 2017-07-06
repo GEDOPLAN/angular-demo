@@ -45,7 +45,7 @@ import { ModulesComponent } from './pages/modules/modules.component';
 
 import { Module1Module } from './pages/modules/module/module1/module1.module';
 
-export function getModule1Module() {
+export function getModule1Module(){
   return Module1Module;
 }
 

@@ -7,6 +7,10 @@ export const demotokenFactory = new OpaqueToken('DEMO-TOKEN-FACTORY');
 export const demotokenValue = new OpaqueToken('DEMO-TOKEN-VALUE');
 export const demotokenAlias = new OpaqueToken('DEMO-TOKEN-ALIAS');
 
+export function tokenFactory(){
+  return new DemoService()
+}
+
 @Component({
   selector: 'app-di',
   templateUrl: './di.component.html',
@@ -15,7 +19,7 @@ export const demotokenAlias = new OpaqueToken('DEMO-TOKEN-ALIAS');
     DemoService,
     { provide: DemoService, useClass: DemoService },
     { provide: demotoken, useClass: DemoService },
-    { provide: demotokenFactory, useFactory: () => { return new DemoService() } },
+    { provide: demotokenFactory, useFactory: tokenFactory },
     { provide: demotokenValue, useValue: 'test' },
     { provide: demotokenAlias, useExisting: DemoService }
   ]

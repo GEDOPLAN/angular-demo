@@ -1,15 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageComponent } from './page/page.component';
+import { HelloComponent } from './components/hello/hello.component';
 
 import { ROUTES } from './module1.routing';
-import { ModuleSharedModule } from '../module-shared/module-shared.module';
-
 @NgModule({
   imports: [
     CommonModule,
     ROUTES
   ],
-  declarations: [PageComponent]
+  declarations: [
+    PageComponent,
+    HelloComponent
+    ],
+  providers: [
+    HelloComponent
+  ]
 })
 export class Module1Module { }

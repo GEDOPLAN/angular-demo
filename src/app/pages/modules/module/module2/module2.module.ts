@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { PageComponent } from './page/page.component';
 
 import {ROUTES} from './module2.routing';
+import {ModuleSharedModule} from '../module-shared/module-shared.module'
 
 @NgModule({
   imports: [
     CommonModule,
-    ROUTES
+    ROUTES,
+    ModuleSharedModule
   ],
   declarations: [PageComponent]
 })

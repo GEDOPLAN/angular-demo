@@ -7,16 +7,18 @@ import { CalculateService } from './services/calculate.service';
 @Component({
   selector: 'app-testing',
   templateUrl: './testing.component.html',
-  styleUrls: ['./testing.component.less'],
-  providers: [
-    HttpService, CalculateService
-  ]
+  styleUrls: ['./testing.component.less']
 })
 export class TestingComponent implements OnInit {
 
-  users: any[];
+  public users: any[];
 
-  constructor(private httpService: HttpService, private calculateService: CalculateService) {
+  public baseNumber: number = 0;
+
+  public resultNumber: number;
+
+  constructor(src: SourceLinkServiceService, private httpService: HttpService, private calculateService: CalculateService) {
+    src.setSourceLink('/src/app/http');
   }
 
   ngOnInit() {
@@ -25,4 +27,10 @@ export class TestingComponent implements OnInit {
       this.users = r;
     });
   }
+
+  add10() {
+    this.resultNumber = this.calculateService.addSomeValues(this.baseNumber, 10);
+  }
+
+
 }

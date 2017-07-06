@@ -8,6 +8,9 @@ import { SourceLinkServiceService } from '../../services/source-link-service.ser
 })
 export class DirectiveComponent implements OnInit {
 
+  error1: any;
+  error2: any;
+
   constructor(src: SourceLinkServiceService) {
     src.setSourceLink('/src/app/directive');
   }

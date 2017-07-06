@@ -19,11 +19,13 @@ import { HttpInterceptor } from './pages/http/services/http-interceptor.service'
 
 import { Module1Module } from './pages/modules/module/module1/module1.module';
 import { ModuleSharedModule } from './pages/modules/module/module-shared/module-shared.module';
+import {Add10Component} from './pages/testing/components/add10/add10.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PAGES
+    PAGES,
+    Add10Component
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,7 @@ export class ComponentComponent {
 
   entry: Entry = new Entry();
   entryPush: Entry = new Entry();
+  hide = false;
 
   clear() {
     this.entry.name = "def";
@@ -21,7 +22,7 @@ export class ComponentComponent {
   }
 
   clearPush() {
-    this.entry=new Entry();
+    this.entry = new Entry();
     this.entry.name = "def";
     this.entry.text = "def";
   }

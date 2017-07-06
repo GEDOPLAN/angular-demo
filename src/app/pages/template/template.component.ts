@@ -22,6 +22,8 @@ export class TemplateComponent implements OnInit, AfterViewInit {
 
   value = 'Hello World';
 
+  buttonColor: any;
+
   constructor(src: SourceLinkServiceService) {
     src.setSourceLink('/src/app/template');
   }
@@ -79,8 +81,8 @@ export class TemplateComponent implements OnInit, AfterViewInit {
     name: "Max Mustermann"
   }
 
-  changName(){
-    this.customer.name=this.customer.name + ' -new- ';
+  changName() {
+    this.customer.name = this.customer.name + ' -new- ';
   }
 
 }

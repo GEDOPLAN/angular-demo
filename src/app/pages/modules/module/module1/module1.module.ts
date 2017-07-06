@@ -4,6 +4,7 @@ import { PageComponent } from './page/page.component';
 import { HelloComponent } from './components/hello/hello.component';
 
 import { ROUTES } from './module1.routing';
+
 @NgModule({
   imports: [
     CommonModule,

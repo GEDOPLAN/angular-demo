@@ -14,7 +14,7 @@ import { CalculateService } from './services/calculate.service';
 })
 export class TestingComponent implements OnInit {
 
-  private users: any[];
+  users: any[];
 
   constructor(private httpService: HttpService, private calculateService: CalculateService) {
   }

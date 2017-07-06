@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SourceLinkServiceService } from '../../services/source-link-service.service';
 import { Observable } from 'rxjs/Rx';
-import {DecimalPipe} from '@angular/common';
+import { DecimalPipe } from '@angular/common';
 
 import 'rxjs/Rx';
 
@@ -17,6 +17,13 @@ export class BuildInsComponent implements OnInit {
   d: Date = new Date();
 
   obs: Observable<string>;
+
+  isDanger: boolean;
+
+  someattribute: any;
+
+
+  nothingHere: string = '';
 
   elements: string[] = [
     'Hello',

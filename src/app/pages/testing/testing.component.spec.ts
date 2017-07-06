@@ -39,6 +39,11 @@ describe('TestingComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should show welcome text', () => {
+    const welcomeText = fixture.nativeElement.querySelector('p').innerHTML;
+    expect(welcomeText.trim()).toEqual('testing works!');
+  });
+
   it('should load users', () => {
     expect(component).toBeTruthy();
     const users: any[] = (<any>component).users;

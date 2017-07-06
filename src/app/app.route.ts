@@ -39,8 +39,15 @@ import { Page3Component } from './pages/navigation/pages/page3/page3.component';
 import { Page4Component } from './pages/navigation/pages/page4/page4.component';
 import { NotAllowedGuardService } from './pages/navigation/guards/not-allowed-guard.service';
 import { NotEmptyGuard } from './pages/navigation/guards/not-empty-guard.service';
-import { HttpComponent } from './pages/http/http.component'; 
+import { HttpComponent } from './pages/http/http.component';
 import { TestingComponent } from './pages/testing/testing.component';
+import { ModulesComponent } from './pages/modules/modules.component';
+
+import { Module1Module } from './pages/modules/module/module1/module1.module';
+
+export function getModule1Module() {
+  return Module1Module;
+}
 
 export const ROUTES = RouterModule.forRoot([
   { path: '', component: HomeComponent, canActivate: [SourceLinkGuard] },
@@ -66,13 +73,19 @@ export const ROUTES = RouterModule.forRoot([
           message: ResolveService
         }
       },
-      { path: 'p1-footer', component: Page1Component, outlet: 'footer'},
+      { path: 'p1-footer', component: Page1Component, outlet: 'footer' },
       { path: '**', redirectTo: 'p3', pathMatch: 'full' },
     ]
 
   },
   { path: 'http', component: HttpComponent, canActivate: [SourceLinkGuard] },
   { path: 'test', component: TestingComponent, canActivate: [SourceLinkGuard] },
+  {
+    path: 'modules', component: ModulesComponent, canActivate: [SourceLinkGuard], children: [
+      { path: 'modules-path1', loadChildren: getModule1Module },
+      { path: 'modules-path2', loadChildren: 'app/pages/modules/module/module2/module2.module#Module2Module' }
+    ]
+  }
 ]);
 
 export const PAGES = [
@@ -111,5 +124,6 @@ export const PAGES = [
   Page3Component,
   Page4Component,
   HttpComponent,
-  TestingComponent
+  TestingComponent,
+  ModulesComponent
 ]

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, OpaqueToken, ErrorHandler } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
 
@@ -16,6 +17,9 @@ import { ResolveService } from './pages/navigation/service/resolve.service';
 import { ErrorHandleService } from './pages/http/services/error-handle.service';
 import { HttpInterceptor } from './pages/http/services/http-interceptor.service';
 
+import { Module1Module } from './pages/modules/module/module1/module1.module';
+import { ModuleSharedModule } from './pages/modules/module/module-shared/module-shared.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +30,9 @@ import { HttpInterceptor } from './pages/http/services/http-interceptor.service'
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    ROUTES
+    ROUTES,
+    Module1Module,
+    ModuleSharedModule.forRoot()
   ],
   providers: [
     SourceLinkServiceService,

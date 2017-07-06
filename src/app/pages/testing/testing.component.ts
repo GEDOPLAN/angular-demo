@@ -16,12 +16,7 @@ export class TestingComponent implements OnInit {
 
   private users: any[];
 
-  private baseNumber: number = 0;
-
-  public resultNumber: number;
-
-  constructor(src: SourceLinkServiceService, private httpService: HttpService, private calculateService: CalculateService) {
-    src.setSourceLink('/src/app/http');
+  constructor(private httpService: HttpService, private calculateService: CalculateService) {
   }
 
   ngOnInit() {
@@ -30,10 +25,4 @@ export class TestingComponent implements OnInit {
       this.users = r;
     });
   }
-
-  add10() {
-    this.resultNumber = this.calculateService.addSomeValues(this.resultNumber || this.baseNumber, 10);
-  }
-
-
 }

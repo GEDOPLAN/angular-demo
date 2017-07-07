@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" datatype="plaintext" original="ng2.template">
+  <file source-language="de" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="d57fe96f83ead623a86b5d78106c941c7735815a" datatype="html">
         <source>
-  Hello World
+ Hello World
 </source>
-        <target>
-        Hallo Welt
-        </target>
+        <target>Hallo Welt</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/i18n/i18n.component.ts</context>
           <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="37388cd7bdeb325dc6d518c00d90af82f7cd06f7" datatype="html">
+        <source>../../../assets/images/if_gb_4627.png</source>
+        <target>../../../assets/images/if_de_4604.png</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/pages/i18n/i18n.component.ts</context>
+          <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
     </body>

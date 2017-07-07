@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageComponent } from './page.component';
+import { SharedHelloComponent } from '../../module-shared/shared-hello/shared-hello.component';
+import { HelloWorldServiceShared } from '../../module-shared/hello-world.service';
 
 describe('PageComponent', () => {
   let component: PageComponent;
@@ -8,9 +10,10 @@ describe('PageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageComponent ]
+      declarations: [PageComponent, SharedHelloComponent],
+      providers: [HelloWorldServiceShared]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -29,7 +29,7 @@ export class TestingComponent implements OnInit {
   }
 
   add10() {
-    this.resultNumber = this.calculateService.addSomeValues(this.baseNumber, 10);
+    this.resultNumber = this.calculateService.addSomeValues(this.resultNumber || this.baseNumber, 10);
   }
 
 

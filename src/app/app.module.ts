@@ -20,12 +20,14 @@ import { HttpInterceptor } from './pages/http/services/http-interceptor.service'
 import { Module1Module } from './pages/modules/module/module1/module1.module';
 import { ModuleSharedModule } from './pages/modules/module/module-shared/module-shared.module';
 import {Add10Component} from './pages/testing/components/add10/add10.component';
+import { I18nComponent } from './pages/i18n/i18n.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PAGES,
-    Add10Component
+    Add10Component,
+    I18nComponent
   ],
   imports: [
     BrowserModule,

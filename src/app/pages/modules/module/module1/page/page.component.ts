@@ -16,9 +16,4 @@ export class PageComponent implements OnInit {
   getHello(): string {
     return this.service.helloWorld();
   }
-
-  getCallCount():number {
-    return this.service.callCount;
-  }
-
 }

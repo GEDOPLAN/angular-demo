@@ -42,6 +42,9 @@ import { NotEmptyGuard } from './pages/navigation/guards/not-empty-guard.service
 import { HttpComponent } from './pages/http/http.component';
 import { TestingComponent } from './pages/testing/testing.component';
 import { ModulesComponent } from './pages/modules/modules.component';
+import { I18nComponent } from './pages/i18n/i18n.component';
+
+
 
 import { Module1Module } from './pages/modules/module/module1/module1.module';
 
@@ -85,7 +88,8 @@ export const ROUTES = RouterModule.forRoot([
       { path: 'modules-path1', loadChildren: getModule1Module },
       { path: 'modules-path2', loadChildren: 'app/pages/modules/module/module2/module2.module#Module2Module' }
     ]
-  }
+  },
+  { path: 'i18n', component: I18nComponent, canActivate: [SourceLinkGuard] },
 ]);
 
 export const PAGES = [
@@ -125,5 +129,6 @@ export const PAGES = [
   Page4Component,
   HttpComponent,
   TestingComponent,
-  ModulesComponent
+  ModulesComponent,
+  I18nComponent
 ]

@@ -7,7 +7,7 @@
   Hello World
 </source>
         <target>
-        Hello World from english
+        Hello World in english
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/pages/i18n/i18n.component.ts</context>

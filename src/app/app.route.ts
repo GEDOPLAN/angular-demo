@@ -43,7 +43,7 @@ import { HttpComponent } from './pages/http/http.component';
 import { TestingComponent } from './pages/testing/testing.component';
 import { ModulesComponent } from './pages/modules/modules.component';
 import { I18nComponent } from './pages/i18n/i18n.component';
-
+import { AnimationsComponent } from './pages/animations/animations.component';
 
 
 import { Module1Module } from './pages/modules/module/module1/module1.module';
@@ -90,6 +90,7 @@ export const ROUTES = RouterModule.forRoot([
     ]
   },
   { path: 'i18n', component: I18nComponent, canActivate: [SourceLinkGuard] },
+  { path: 'animations', component: AnimationsComponent, canActivate: [SourceLinkGuard] },
 ]);
 
 export const PAGES = [
@@ -130,5 +131,6 @@ export const PAGES = [
   HttpComponent,
   TestingComponent,
   ModulesComponent,
-  I18nComponent
+  I18nComponent,
+  AnimationsComponent
 ]

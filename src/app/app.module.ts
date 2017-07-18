@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, OpaqueToken, ErrorHandler } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,6 +23,7 @@ import { ModuleSharedModule } from './pages/modules/module/module-shared/module-
 import {Add10Component} from './pages/testing/components/add10/add10.component';
 import { I18nComponent } from './pages/i18n/i18n.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,7 @@ import { I18nComponent } from './pages/i18n/i18n.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
@@ -46,7 +49,7 @@ import { I18nComponent } from './pages/i18n/i18n.component';
     Page1Component,
     ResolveService,
     { provide: 'DEMO-TOKEN', useValue: 'Value from Root.' },
-    { provide: ErrorHandler, useClass: ErrorHandleService },
+    // { provide: ErrorHandler, useClass: ErrorHandleService },
     {
       provide: Http,
       deps: [XHRBackend, RequestOptions],
